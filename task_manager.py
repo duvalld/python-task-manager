@@ -37,9 +37,11 @@ class TaskManager():
                 # Item count per status
                 if task_item["status"] == "Completed":
                     completed_task_count += 1
+                    # Add category and count if not existing in category_completed_task_count increment to 1 if yes
                     if task_item["category"] in category_completed_task_count:
                         category_completed_task_count[task_item["category"]] += 1
                     else:
+                        # Add category and count if not existing in category_pending_task_count increment to 1 if yes
                         category_completed_task_count.setdefault(task_item["category"], 1)
                 else:
                     pending_task_count += 1
@@ -48,7 +50,7 @@ class TaskManager():
                     else:
                         category_pending_task_count.setdefault(task_item["category"], 1)
             # Display total row count
-            print(f"{view_all_result_count} item(s) Pending Task: {pending_task_count} Completed Task: {completed_task_count}")
+            print(f"{view_all_result_count} item(s) Pending Task: {pending_task_count} Completed Task: {completed_task_count} Completion Rate: {completed_task_count / view_all_result_count * 100}%")
             # Display stats table
             category_count_header = f"{"Category":<10} | {"Completed":<10} | {"Pending":<10} | {"Total":<10} | {"Completion Rate":<16}"
             print(category_count_header)
