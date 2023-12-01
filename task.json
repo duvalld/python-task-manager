@@ -22,5 +22,11 @@
         "description": "Go to gym",
         "category": "Personal",
         "status": "Pending"
+    },
+    {
+        "title": "Test",
+        "description": "Test Desc",
+        "category": "home",
+        "status": "Pending"
     }
 ]
