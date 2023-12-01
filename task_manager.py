@@ -40,23 +40,23 @@ class TaskManager():
                     if task_item["category"] in category_completed_task_count:
                         category_completed_task_count[task_item["category"]] += 1
                     else:
-                        category_completed_task_count[task_item["category"]] = 1
+                        category_completed_task_count.setdefault(task_item["category"], 1)
                 else:
                     pending_task_count += 1
                     if task_item["category"] in category_pending_task_count:
                         category_pending_task_count[task_item["category"]] += 1
                     else:
-                        category_pending_task_count[task_item["category"]] = 1
+                        category_pending_task_count.setdefault(task_item["category"], 1)
             # Display total row count
             print(f"{view_all_result_count} item(s) Pending Task: {pending_task_count} Completed Task: {completed_task_count}")
             # Display stats table
-            category_count_header = f"{"Category":<10} | {
-                "Completed":<10} | {"Pending":<10} | {"Total":<10}"
+            category_count_header = f"{"Category":<10} | {"Completed":<10} | {"Pending":<10} | {"Total":<10}"
             print(category_count_header)
             print(len(category_count_header) * "-")
             for category, count in category_count_dict.items():
-                print(f"{category:<10} | {category_completed_task_count[category]:<10} | {category_pending_task_count[category]:<10} | {count:<10}")
+                print(f"{category:<10} | {category_completed_task_count.get(category, 0):<10} | {category_pending_task_count.get(category, 0):<10} | {count:<10}")
             print(len(category_count_header) * "-")
+            
 
     def add_task(self):
         """Add a new task to the task list."""

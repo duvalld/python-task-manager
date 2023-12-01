@@ -1,1 +1,26 @@
-[{"title": "Task 1", "description": "Description sample", "category": "Work", "status": "Completed"}, {"title": "Coding", "description": "Learn how to code", "category": "Work", "status": "Pending"}]
+[
+    {
+        "title": "Task 1",
+        "description": "Description sample",
+        "category": "Work",
+        "status": "Completed"
+    },
+    {
+        "title": "Coding",
+        "description": "Learn how to code",
+        "category": "Work",
+        "status": "Pending"
+    },
+    {
+        "title": "Grocery",
+        "description": "Buy Snacks",
+        "category": "Home",
+        "status": "Pending"
+    },
+    {
+        "title": "Workout",
+        "description": "Go to gym",
+        "category": "Personal",
+        "status": "Pending"
+    }
+]
