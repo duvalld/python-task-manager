@@ -50,11 +50,14 @@ class TaskManager():
             # Display total row count
             print(f"{view_all_result_count} item(s) Pending Task: {pending_task_count} Completed Task: {completed_task_count}")
             # Display stats table
-            category_count_header = f"{"Category":<10} | {"Completed":<10} | {"Pending":<10} | {"Total":<10}"
+            category_count_header = f"{"Category":<10} | {"Completed":<10} | {"Pending":<10} | {"Total":<10} | {"Completion Rate":<16}"
             print(category_count_header)
             print(len(category_count_header) * "-")
             for category, count in category_count_dict.items():
-                print(f"{category:<10} | {category_completed_task_count.get(category, 0):<10} | {category_pending_task_count.get(category, 0):<10} | {count:<10}")
+                i_completed_task_count = category_completed_task_count.get(category, 0)
+                i_pending_task_count = category_pending_task_count.get(category, 0)
+                completion_rate = f"{i_completed_task_count / count * 100}%"
+                print(f"{category:<10} | {i_completed_task_count:<10} | {i_pending_task_count:<10} | {count:<10} | {completion_rate:<10}")
             print(len(category_count_header) * "-")
             
 
